@@ -6,10 +6,10 @@ import CategoryList from '../views/CategoryList.vue'
 import Home from '../views/Home.vue'
 
 const routes = [
-    { path: '/', name: 'Gincana', component: Home },
-    { path: '/game', name: 'Categorias', component: CategoryList },
+    { path: '/gincana', name: 'Gincana', component: Home },
+    { path: '/gincana/game', name: 'Categorias', component: CategoryList },
     {
-        path: '/category-detail/:categoryId',
+        path: '/gincana/category-detail/:categoryId',
         name: 'QuestionList',
         component: QuestionList
     }
