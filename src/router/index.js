@@ -6,6 +6,7 @@ import CategoryList from '../views/CategoryList.vue'
 import Home from '../views/Home.vue'
 
 const routes = [
+    { path: '/', redirect: '/gincana' },
     { path: '/gincana', name: 'Gincana', component: Home },
     { path: '/gincana/game', name: 'Categorias', component: CategoryList },
     {
