@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;    /* horizontal center */
-  justify-content: center;/* vertical center */
   min-height: 100vh;      /* ensure full viewport height */
   font-weight: normal;
 }

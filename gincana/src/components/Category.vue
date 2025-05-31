@@ -1,6 +1,8 @@
 <template>
   <div class="card" @click="$emit('select')">
     <h2 class="name">{{ name }}</h2>
+    <h3 v-if="answered > 0 && answered != total" class="description">{{ answered }}/{{ total }}</h3>
+    <div v-if="answered == total" class="red-x">✗</div>
   </div>
 </template>
 
@@ -9,28 +11,45 @@ defineProps({
   name: {
     type: String,
     required: true
-  }
+  },
+  answered: {
+    type: Number,
+    required: true
+  },
+  total: {
+    type: Number,
+    required: true
+  },
 })
 </script>
 
 <style scoped>
+
 .card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: var(--primary);;
+  border-radius: 100px;
   padding: 1.5rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-width: 300px;
   min-height: 200px;
   text-align: center;
   cursor: pointer;
+  position: relative;
+  overflow: hidden; 
+  flex-direction: column;
 }
 
 .name {
-  font-size: 3rem;
-  color: #333;
+  font-size: clamp(2rem, 2.5vw, 4rem);
+  color: var(--secondary);
   margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1.3rem;
+  color: var(--description);
+  margin: -0.7rem;
 }
 </style>

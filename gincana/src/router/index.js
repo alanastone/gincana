@@ -1,16 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // Import your views
-import Questions from '../views/Questions.vue'
+import QuestionList from '../views/QuestionList.vue'
+import CategoryList from '../views/CategoryList.vue'
 import Home from '../views/Home.vue'
 
 const routes = [
-  { path: '/', name: 'Gincana', component: Home },
-  {
-    path: '/category-detail/:categoryId',
-    name: 'Questions',
-    component: Questions
-  }
+    { path: '/', name: 'Gincana', component: Home },
+    { path: '/game', name: 'Categorias', component: CategoryList },
+    {
+        path: '/category-detail/:categoryId',
+        name: 'QuestionList',
+        component: QuestionList
+    }
 ]
 
 const router = createRouter({

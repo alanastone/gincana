@@ -17,6 +17,77 @@ import { useRouter } from 'vue-router'
   align-items: center;
 }
 
+.red-x {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10rem;
+  color: var(--primary);
+  background: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  font-weight: bold;
+  opacity: 0.85;
+}
+
+.category-header {
+  width: 100vw;
+  left: 0;
+  top: 0;
+  position: relative;
+  background: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+  z-index: 10;
+}
+
+.category-title {
+  text-align: center;
+  font-size: 5rem;
+  margin: 0.5rem;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+.reset-btn {
+  position: absolute;
+  top: 1rem;            
+  right: 1rem; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  align-items: center;
+  display: flex;
+}
+
+.reset-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--primary);
+  transition: fill 0.2s;
+}
+
+.reset-btn:hover .reset-icon {
+  fill: var(--danger);
+}
+
+.questions-page {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  padding-bottom: 11rem;
+}
+
 @media (min-width: 768px) {
   .game-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
@@ -26,7 +97,7 @@ import { useRouter } from 'vue-router'
 
 @media (min-width: 1024px) {
   .game-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
     align-items: center;
     width: max-content;
