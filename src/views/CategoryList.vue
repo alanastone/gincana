@@ -33,7 +33,7 @@ const router = useRouter()
 data.initializeData(categories)
 
 function goToDetail(id) {
-  router.push(`/category-detail/${id}`)
+  router.push(`/gincana/category-detail/${id}`)
 }
 
 function resetGame() {

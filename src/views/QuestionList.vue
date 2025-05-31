@@ -23,7 +23,7 @@ function resetCategory() {
 }
 
 function goBack() {
-  router.push('/game')
+  router.push('/gincana/game')
 }
 </script>
 

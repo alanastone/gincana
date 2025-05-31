@@ -16,7 +16,7 @@ import PlayIcon from '../assets/play.svg'
 
 const router = useRouter()
 function goToCategoryList() {
-  router.push('/game')
+  router.push('/gincana/game')
 }
 </script>
 
