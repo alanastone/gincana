@@ -1,5 +1,31 @@
 <script setup>
-import { useRouter } from 'vue-router'
+import { onMounted, onUnmounted } from 'vue'
+
+let wakeLock = null
+
+async function requestWakeLock() {
+  try {
+    if ('wakeLock' in navigator) {
+      wakeLock = await navigator.wakeLock.request('screen')
+    }
+  } catch (err) {
+    console.error('Wake Lock not supported or failed:', err)
+  }
+}
+
+onMounted(() => {
+  requestWakeLock()
+  // Optional: re-request on visibility change (some browsers release on tab switch)
+  document.addEventListener('visibilitychange', requestWakeLock)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('visibilitychange', requestWakeLock)
+  if (wakeLock) {
+    wakeLock.release()
+    wakeLock = null
+  }
+})
 </script>
 
 <template>
